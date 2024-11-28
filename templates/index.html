@@ -17,6 +17,9 @@
     <!-- Particles.js für interaktive Partikel -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 
+    <!-- SweetAlert2 für Passwortabfrage -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <!-- CSS Datei einbinden -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
@@ -42,31 +45,18 @@
         <div>
             <button class="button button-on" id="turn-on" onclick="turnOnLed()" data-aos="fade-right">Ein</button>
             <button class="button button-off" id="turn-off" onclick="turnOffLed()" data-aos="fade-left">Aus</button>
-            <button class="button button-shutdown" id="shutdown" onclick="confirmShutdown()" data-aos="fade-up">Beenden</button>
+            <button class="button button-shutdown" id="shutdown" onclick="shutdownLed()" data-aos="fade-up">Beenden</button>
         </div>
     </div>
 
-    <!-- Dark Mode Toggle -->
-    <button class="dark-mode-toggle" onclick="toggleDarkMode()">☀️</button>
-
-    <!-- Fußzeile -->
+    <!-- GitHub Logo Link -->
     <footer>
         <a href="https://github.com/whitehai11/projektarbeit2025" target="_blank">
-            <!-- GitHub Logo als Bild -->
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a3/GitHub_Mark_64px.png" alt="GitHub Logo" class="github-logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/1024px-Octicons-mark-github.svg.png" alt="GitHub Logo" style="width: 40px; height: 40px;">
         </a>
-        <p id="footer-text">Copyright © Maro, Elias und Hannes</p>
+        <p id="footer-text">Made by Maro, Elias und Hannes</p>
+        <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙</button>
     </footer>
-
-    <!-- Passwortabfrage für Beenden -->
-    <div id="password-modal" class="modal">
-        <div class="modal-content">
-            <h2>Passwort Eingabe</h2>
-            <input type="password" id="password-input" placeholder="Passwort eingeben">
-            <button onclick="checkPassword()">Bestätigen</button>
-            <button onclick="closeModal()">Abbrechen</button>
-        </div>
-    </div>
 
     <!-- JavaScript Datei einbinden -->
     <script src="{{ url_for('static', filename='script.js') }}"></script>
