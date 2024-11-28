@@ -1,10 +1,10 @@
-let ledStatus = 'off'; // Einmalige Deklaration
+let ledStatus = 'off';
 
 // LED ein- und ausschalten
 function turnOnLed() {
     if (ledStatus === 'off') {
         ledStatus = 'on';
-        document.getElementById("led-visualizer").style.backgroundColor = '#4CAF50'; // LED grün
+        document.getElementById("led-visualizer").style.backgroundColor = '#4CAF50';
         updateStatus('on');
     }
 }
@@ -12,14 +12,14 @@ function turnOnLed() {
 function turnOffLed() {
     if (ledStatus === 'on') {
         ledStatus = 'off';
-        document.getElementById("led-visualizer").style.backgroundColor = '#f44336'; // LED rot
+        document.getElementById("led-visualizer").style.backgroundColor = '#f44336';
         updateStatus('off');
     }
 }
 
 function shutdownLed() {
     ledStatus = 'off';
-    document.getElementById("led-visualizer").style.backgroundColor = '#333'; // LED aus
+    document.getElementById("led-visualizer").style.backgroundColor = '#333';
     updateStatus('off');
 }
 
@@ -43,4 +43,30 @@ function changeLedColor(event) {
     if (ledStatus === 'on') {
         document.getElementById("led-visualizer").style.backgroundColor = ledColor;
     }
+}
+
+// Dark Mode umschalten
+function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+    const darkModeButton = document.querySelector('.dark-mode-toggle');
+    darkModeButton.textContent = document.body.classList.contains("dark-mode") ? '🌙' : '☀️';
+}
+
+// Passwortabfrage für Beenden
+function confirmShutdown() {
+    document.getElementById("password-modal").style.display = 'flex';
+}
+
+function checkPassword() {
+    const password = document.getElementById("password-input").value;
+    if (password === 'Maro2010') {
+        shutdownLed();
+        closeModal();
+    } else {
+        alert("Versuch gar nicht erst, schaffst es eh nicht!");
+    }
+}
+
+function closeModal() {
+    document.getElementById("password-modal").style.display = 'none';
 }

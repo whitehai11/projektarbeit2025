@@ -42,7 +42,29 @@
         <div>
             <button class="button button-on" id="turn-on" onclick="turnOnLed()" data-aos="fade-right">Ein</button>
             <button class="button button-off" id="turn-off" onclick="turnOffLed()" data-aos="fade-left">Aus</button>
-            <button class="button button-shutdown" id="shutdown" onclick="shutdownLed()" data-aos="fade-up">Beenden</button>
+            <button class="button button-shutdown" id="shutdown" onclick="confirmShutdown()" data-aos="fade-up">Beenden</button>
+        </div>
+    </div>
+
+    <!-- Dark Mode Toggle -->
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()">☀️</button>
+
+    <!-- Fußzeile -->
+    <footer>
+        <a href="https://github.com/whitehai11/projektarbeit2025" target="_blank">
+            <!-- GitHub Logo als Bild -->
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a3/GitHub_Mark_64px.png" alt="GitHub Logo" class="github-logo">
+        </a>
+        <p id="footer-text">Copyright © Maro, Elias und Hannes</p>
+    </footer>
+
+    <!-- Passwortabfrage für Beenden -->
+    <div id="password-modal" class="modal">
+        <div class="modal-content">
+            <h2>Passwort Eingabe</h2>
+            <input type="password" id="password-input" placeholder="Passwort eingeben">
+            <button onclick="checkPassword()">Bestätigen</button>
+            <button onclick="closeModal()">Abbrechen</button>
         </div>
     </div>
 

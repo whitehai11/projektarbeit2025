@@ -35,7 +35,7 @@ h1 {
     font-size: 1.2em;
     cursor: pointer;
     border: none;
-    border-radius: 50px;  /* Abgerundete Ecken für modernen Look */
+    border-radius: 50px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     width: 240px;
@@ -104,7 +104,42 @@ h1 {
     color: #fff;
 }
 
-/* Modernes Toggle für Dark Mode */
+.dark-mode footer p {
+    color: white;
+}
+
+/* GitHub Logo in der Fußzeile */
+.github-logo {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.github-logo:hover {
+    transform: scale(1.1);
+}
+
+/* Fußzeile */
+footer {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2rem;
+    color: #333;
+    opacity: 0.7;
+}
+
+footer p {
+    margin: 5px;
+}
+
+footer a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Dark Mode Toggle Button */
 .dark-mode-toggle {
     position: fixed;
     top: 20px;
@@ -117,8 +152,46 @@ h1 {
     z-index: 10;
 }
 
-.container {
-    position: relative;
-    z-index: 1;
-    margin-top: 100px;
+/* Modal for Password */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.modal input {
+    padding: 10px;
+    font-size: 1.2rem;
+    margin: 10px 0;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.modal button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.modal button:hover {
+    background-color: #45a049;
 }
