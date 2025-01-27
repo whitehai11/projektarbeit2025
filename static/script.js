@@ -1,4 +1,3 @@
-// Dark Mode Umschalter
 function toggleDarkMode() {
     document.body.classList.toggle("dark-mode");
     let footerText = document.getElementById("footer-text");
@@ -9,7 +8,6 @@ function toggleDarkMode() {
     }
 }
 
-// LED On/Off Funktion
 function turnOnLed() {
     const ledStatus = document.getElementById('status-text');
     ledStatus.classList.remove('led-off');
@@ -26,13 +24,11 @@ function turnOffLed() {
     document.getElementById('led-visualizer').style.backgroundColor = "#f44336";
 }
 
-// LED Farbe ändern
 function changeLedColor(event) {
     const color = event.target.value;
     document.getElementById('led-visualizer').style.backgroundColor = color;
 }
 
-// Passwortabfrage für das Ausschalten
 function shutdownLed() {
     Swal.fire({
         title: 'Passwort Eingabe',
